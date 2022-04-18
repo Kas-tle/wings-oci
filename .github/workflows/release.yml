@@ -12,7 +12,7 @@ jobs:
            id: build_release
            run: |
              dnf module install -y go-toolset
-             dnf install -y jq
+             dnf install -y jq wget
              wget https://raw.githubusercontent.com/Kas-tle/wings-oci/main/releases.json
              VERSION=$(jq -r '.[-1]' releases.json)
              echo "::set-output name=VERSION::${VERSION}"

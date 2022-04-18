@@ -3,7 +3,7 @@ on:
   - push
 
 jobs:
-  get-version:
+  build-and-release:
     runs-on: ubuntu-latest
     container:
       image: oraclelinux:8
@@ -11,7 +11,8 @@ jobs:
          - name: Build release
            id: build_release
            run: |
-             dnf module install -y go-toolset jq
+             dnf module install -y go-toolset
+             dnf install -y jq
              VERSION=$(jq -r '.[-1]' releases.json)
              echo "::set-output name=VERSION::${VERSION}"
              echo -ne "$(curl -sL https://api.github.com/repos/pterodactyl/wings/releases/tags/${VERSION} | jq -r .body)" > changelog.md

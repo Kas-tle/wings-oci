@@ -1,6 +1,8 @@
 name: Build & Release Wings for Oracle Linux
 on:
-  - push
+  push:
+    paths:
+      - 'releases.json'
 
 jobs:
   build-and-release:

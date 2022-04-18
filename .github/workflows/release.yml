@@ -18,7 +18,7 @@ jobs:
              echo "::set-output name=VERSION::${VERSION}"
              echo -ne "$(curl -sL https://api.github.com/repos/pterodactyl/wings/releases/tags/${VERSION} | jq -r .body)" > changelog.md
              wget https://github.com/pterodactyl/wings/archive/refs/tags/${VERSION}.zip
-             cd $(ls -d */|head -n 1)
+             cd wings-${VERSION#?}
              CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w -X github.com/pterodactyl/wings/system.Version=${VERSION#?}" -o ../wings_oracle_linux_amd64 -v wings.go
              CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -ldflags="-s -w -X github.com/pterodactyl/wings/system.Version=${VERSION#?}" -o ../wings_oracle_linux_arm64 -v wings.go
          - name: Create tag

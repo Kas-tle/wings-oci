@@ -13,3 +13,7 @@ mkdir -p /etc/pterodactyl
 curl -L -o /usr/local/bin/wings "https://github.com/kas-tle/wings-oci/releases/latest/download/wings_oracle_linux_$([[ "$(uname -m)" == "x86_64" ]] && echo "amd64" || echo "arm64")"
 chmod u+x /usr/local/bin/wings
 ```
+
+## Full Setup Guide
+
+Please refer to [GUIDE.md](https://github.com/Kas-tle/wings-oci/blob/main/GUIDE.md) for a full walkthrough of setting up Wings on an ARM OCI machine.

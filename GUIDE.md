@@ -1,6 +1,6 @@
 # Setting Up Wings on an ARM based Oracle Cloud With Oracle Linux
 
-This guide explains the process of setting up and installing Wings on an ARM based Oracle Cloud machine running Oracle Linux 8. Note that this guide does not explain the panel instalation process. Since the panel requires PHP 8, it is currently reccomended that Ubunutu be used instead, as PHP 8 will not be availible for RHEL-based ARM distributions until version 8.6.
+This guide explains the process of setting up and installing Wings on an ARM based Oracle Cloud machine running Oracle Linux 8. Note that this guide does not explain the panel instalation process. Since the panel requires PHP 8, it is currently reccomended that Ubunutu be used instead  if you would like to install the panel on your Oracle Cloud machine, as PHP 8 will not be availible for RHEL-based ARM distributions until version 8.6.
 
 ## Contents
 

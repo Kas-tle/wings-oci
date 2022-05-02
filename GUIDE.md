@@ -81,8 +81,8 @@ sudo dnf install -y policycoreutils selinux-policy selinux-policy-targeted setro
 To ensure Wings does not encounter errors due to SELinux, run:
 
 ```sh
-audit2allow -a -M http_port_t
-semodule -i http_port_t.pp
+sudo audit2allow -a -M http_port_t
+sudo semodule -i http_port_t.pp
 ```
 
 ## Obtaining SSL Certificates

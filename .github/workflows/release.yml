@@ -25,8 +25,8 @@ jobs:
              CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w -X github.com/pterodactyl/wings/system.Version=${VERSION#?}" -o ../wings_oracle_linux_amd64 -v wings.go
              CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -ldflags="-s -w -X github.com/pterodactyl/wings/system.Version=${VERSION#?}" -o ../wings_oracle_linux_arm64 -v wings.go
              echo '```' >> changelog.md
-             sha256sum ../wings_oracle_linux_amd64 >> changelog.md
-             sha256sum ../wings_oracle_linux_arm64 >> changelog.md
+             sha256sum wings_oracle_linux_amd64 >> changelog.md
+             sha256sum wings_oracle_linux_arm64 >> changelog.md
              echo '```' >> changelog.md
          - name: Create tag
            uses: mathieudutour/github-tag-action@v5.5

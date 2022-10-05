@@ -18,7 +18,6 @@ jobs:
              export GOROOT=/usr/local/go
              export GOPATH=$HOME/go
              export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-             source ~/.bashrc
              go version
              dnf install -y jq wget unzip
              wget https://raw.githubusercontent.com/Kas-tle/wings-oci/main/releases.json

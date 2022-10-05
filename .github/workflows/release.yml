@@ -14,7 +14,7 @@ jobs:
            id: build_release
            run: |
              curl -LO https://go.dev/dl/go1.18.7.linux-amd64.tar.gz
-             sudo tar -C /usr/local -xzf go1.18.7.linux-amd64.tar.gz
+             tar -C /usr/local -xzf go1.18.7.linux-amd64.tar.gz
              export GOROOT=/usr/local/go
              export GOPATH=$HOME/go
              export PATH=$GOPATH/bin:$GOROOT/bin:$PATH

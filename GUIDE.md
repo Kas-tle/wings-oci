@@ -174,10 +174,10 @@ sudo chmod u+x /usr/local/bin/wings
 
 ### Configuring
 
-Use the panel to create a new node and obtain a Wings configuration file. For the entry `system.data` in the config file, it is reccomended that you use `/var/srv/containers/pterodactyl` to avoid issues with SELinux. To create this directory, run:
+Use the panel to create a new node and obtain a Wings configuration file. For the entry `system.data` in the config file, it is reccomended that you use `/var/srv/containers/pterodactyl/volumes` to avoid issues with SELinux. To create this directory, run:
 
 ```sh
-sudo mkdir -p /var/srv/containers/pterodactyl
+sudo mkdir -p /var/srv/containers/pterodactyl/volumes
 ```
 
 Once you have obtained and copied the config.yml file, run:

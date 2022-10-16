@@ -94,11 +94,12 @@ curl https://get.acme.sh | sh
 
 ### Obtaining and Specifying a Cloudflare API Key
 
-You must obtain an API key from Cloudflare for acme.sh to run properly. Ensure that a DNS record (A or CNAME record) is pointing to your Oracle Cloud machine, and set the cloud to grey (bypassing CloudFlare proxy). Then go to My Profile > API keys and on Global API Key subtab, click on "view", enter your CloudFlare password, and copy the API key to clipboard. To pass acme.sh the API key, run:
+You must obtain an API key from Cloudflare for acme.sh to run properly. Ensure that a DNS record (A or CNAME record) is pointing to your Oracle Cloud machine, and set the cloud to grey (bypassing CloudFlare proxy). Then go to My Profile > API keys and on Global API Key subtab, click "Create Token". In the API token templates subtab, for the Edit zone DNS option, click "Use template". Select the domain that will be used in the leftmost box under Zone Resources. Finally, click "Continue to Summary", followed by "Create Token". Be sure to copy the token, as it will only be shown once. The Account ID and Zone ID must also be obtained, which can be found at the bottom left of the Overview page on the Cloudflare dashboard for the domain. To pass acme.sh the API key, run:
 
 ```sh
-export CF_Key="API_KEY_HERE"
-export CF_Email="CLOUDFLARE_ACCOUNT_EMAIL_HERE@example.com"
+export CF_Token="API_KEY_HERE"
+export CF_Account_ID="ACCOUNT_ID_HERE"
+export CF_Zone_ID="ZONE_ID_HERE"
 ```
 
 ### Changing the Default Certificate Provider

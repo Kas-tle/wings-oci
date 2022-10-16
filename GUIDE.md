@@ -238,9 +238,11 @@ hostname -I | awk '{print $1}'
 
 ## SELinux Setup
 
-To ensure Wings does not encounter errors due to SELinux, run:
+If you encounter issues with Wings due to SELinux, run:
 
 ```sh
 sudo audit2allow -a -M http_port_t
 sudo semodule -i http_port_t.pp
 ```
+
+Note that this will fail with SELinux has not blocked any Wings connections. If the is the case, your issue is likely related to something else.

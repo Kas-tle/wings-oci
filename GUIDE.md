@@ -107,7 +107,7 @@ export CF_Zone_ID="ZONE_ID_HERE"
 Before continuing, it is reccomended that you change the default certificate provider for acme.sh from ZeroSSL to LetsEncrypt, as ZeroSSL tends to be unreliable. To do so, run:
 
 ```sh
-/root/.acme.sh"/acme.sh --set-default-ca  --server  letsencrypt
+"/root/.acme.sh"/acme.sh --set-default-ca  --server  letsencrypt
 ```
 
 ### Obtaining the Certificates
@@ -121,7 +121,7 @@ mkdir -p /etc/letsencrypt/live/example.com
 Finally, to obtain your SSL certificates and setup automatic renewal (being sure to replace `example.com` with your domain or subdomain), run:
 
 ```sh
-/root/.acme.sh"/acme.sh --issue --dns dns_cf -d "example.com" --key-file /etc/letsencrypt/live/example.com/privkey.pem --fullchain-file /etc/letsencrypt/live/example.com/fullchain.pem
+"/root/.acme.sh"/acme.sh --issue --dns dns_cf -d "example.com" --key-file /etc/letsencrypt/live/example.com/privkey.pem --fullchain-file /etc/letsencrypt/live/example.com/fullchain.pem
 ```
 
 ### Restarting Wings on Certificate Renewal

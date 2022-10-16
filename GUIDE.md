@@ -167,9 +167,9 @@ Note that you must return to this menu in the future to add ports for any server
 To install the Wings executable, run:
 
 ```sh
-mkdir -p /etc/pterodactyl
-curl -L -o /usr/local/bin/wings "https://github.com/kas-tle/wings-oci/releases/latest/download/wings_oracle_linux_$([[ "$(uname -m)" == "x86_64" ]] && echo "amd64" || echo "arm64")"
-chmod u+x /usr/local/bin/wings
+sudo mkdir -p /etc/pterodactyl
+sudo curl -L -o /usr/local/bin/wings "https://github.com/kas-tle/wings-oci/releases/latest/download/wings_oracle_linux_$([[ "$(uname -m)" == "x86_64" ]] && echo "amd64" || echo "arm64")"
+sudo chmod u+x /usr/local/bin/wings
 ```
 
 ### Configuring

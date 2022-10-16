@@ -10,7 +10,6 @@ This guide explains the process of setting up and installing Wings on an ARM bas
     + [Base Dependencies](#base-dependencies)
     + [Docker](#docker)
     + [SELinux](#selinux)
-  * [SELinux Setup](#selinux-setup)
   * [Obtaining SSL Certificates](#obtaining-ssl-certificates)
     + [acme.sh Installation](#acmesh-installation)
     + [Obtaining and Specifying a Cloudflare API Key](#obtaining-and-specifying-a-cloudflare-api-key)
@@ -25,6 +24,7 @@ This guide explains the process of setting up and installing Wings on an ARM bas
     + [Configuring](#configuring)
     + [Setting up the Service](#setting-up-the-service)
   * [Allocations](#allocations)
+  * [SELinux Setup](#selinux-setup)
 
 ## Grub Configuration
 
@@ -74,15 +74,6 @@ To install tools for managing SELinux, run:
 
 ```sh
 sudo dnf install -y policycoreutils selinux-policy selinux-policy-targeted setroubleshoot-server setools setools-console mcstrans
-```
-
-## SELinux Setup
-
-To ensure Wings does not encounter errors due to SELinux, run:
-
-```sh
-sudo audit2allow -a -M http_port_t
-sudo semodule -i http_port_t.pp
 ```
 
 ## Obtaining SSL Certificates
@@ -242,4 +233,13 @@ Note that your Oracle Cloud machine will generally not be bound to its public IP
 
 ```sh
 hostname -I | awk '{print $1}'
+```
+
+## SELinux Setup
+
+To ensure Wings does not encounter errors due to SELinux, run:
+
+```sh
+sudo audit2allow -a -M http_port_t
+sudo semodule -i http_port_t.pp
 ```

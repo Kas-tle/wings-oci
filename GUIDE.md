@@ -38,10 +38,23 @@ sudo nano /etc/default/grub
 
 Add the arguments `swapaccount=1` and `systemd.unified_cgroup_hierarchy=1` to the end of the entry `GRUB_CMDLINE_LINUX`. Ensure each argument is seperated by a space and is within the existing double quotes. Do not delete any existing arguments on the line. Use `Ctrl+X` once done editing, and press `Y` when prompted to save the file.
 
-Run the following to update the grub config:
+First, establish if you are booting via UEFI or BIOS:
+
+```sh
+[ -d /sys/firmware/efi ] && echo UEFI || echo BIOS
+```
+
+If the above command outputs `UEFI`, run the following to update the grub config:
 
 ```sh
 sudo grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+sudo reboot
+```
+
+If the output is `BIOS` instead, run the following to update the grub config:
+
+```sh
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 sudo reboot
 ```
 
